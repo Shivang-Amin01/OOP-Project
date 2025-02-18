@@ -1,0 +1,28 @@
+Project: Car Rental System
+Features 
+1. Handle bookings 
+2. payments
+3. vehicle availability
+
+Project Requirements
+Your project must meet the following technical and functional criteria:
+Technical Requirements
+1. Object-Oriented Design
+o Use at least four classes, including inheritance and polymorphism.
+o Encapsulation and abstraction should be demonstrated effectively.
+2. File Handling
+o Include the ability to save and retrieve data from files (e.g., .txt or .csv).
+3. Exception Handling
+o Implement error handling to manage user inputs and system issues gracefully.
+4. User Interface (Optional)
+o Console-based interfaces are required, but groups may optionally add a GUI using
+tkinter or other libraries.
+5. Scalability
+
+Ensure the codebase is modular and can accommodate future expansions.
+Functional Requirements
+1. Your project should solve a real-world problem or simulate a working system.
+2. It must include user interactions (e.g., menus, prompts) that simulate a real user
+experience.
+3. Include a readme file with instructions on how to run the program and describe its
+functionality.
