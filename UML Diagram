@@ -1,0 +1,17 @@
+UML = Unified Modeling Language 
+
+It is visual represenration of a system or software
+
+Purpose: 
+Understand desgin, code architecture and implementation
+Model workflows and business process
+Visualize potential outcomes or errors in programs
+
+Types of UML Diagrams 
+Class diagram: Represnts and abstract model of classes and their relationship
+Object diagram: Represent an instance of class diagram at a particulat moment 
+Compontnt diagram: Breaks down a system into smaller components and shows how thry relate 
+Deployment diagram: Models the physical depliyment of systems components 
+Composite Structure diagram: Shows how a class, component or collaboration is made up of smaller elements
+Package diagram: Shows dependencied between packages and their internal composition
+
