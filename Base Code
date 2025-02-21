@@ -1,0 +1,95 @@
+import json
+from datetime import datetime
+
+# Base User Class
+class User:
+    def __init__(self, user_id, name, role):
+        self.user_id = user_id
+        self.name = name
+        self.role = role
+    
+    def __str__(self):
+        return f"{self.role}: {self.name} (ID: {self.user_id})"
+
+# Derived Classes
+class Manager(User):
+    def __init__(self, user_id, name):
+        super().__init__(user_id, name, role="Manager")
+
+class Employee(User):
+    def __init__(self, user_id, name):
+        super().__init__(user_id, name, role="Employee")
+
+# Vehicle Class
+class Vehicle:
+    def __init__(self, vehicle_id, brand, model, year, available=True):
+        self.vehicle_id = vehicle_id
+        self.brand = brand
+        self.model = model
+        self.year = year
+        self.available = available
+    
+    def update_availability(self, status):
+        self.available = status
+    
+    def __str__(self):
+        status = "Available" if self.available else "Rented"
+        return f"{self.brand} {self.model} ({self.year}) - {status}"
+
+# Booking Class
+class Booking:
+    def __init__(self, booking_id, user, vehicle, start_date, end_date):
+        self.booking_id = booking_id
+        self.user = user
+        self.vehicle = vehicle
+        self.start_date = start_date
+        self.end_date = end_date
+    
+    def __str__(self):
+        return f"Booking {self.booking_id}: {self.user.name} -> {self.vehicle.brand} {self.vehicle.model} ({self.start_date} to {self.end_date})"
+
+# Payment Class
+class Payment:
+    def __init__(self, payment_id, amount, status="Pending"):
+        self.payment_id = payment_id
+        self.amount = amount
+        self.status = status
+    
+    def process_payment(self):
+        self.status = "Completed"
+    
+    def __str__(self):
+        return f"Payment {self.payment_id}: ${self.amount} - {self.status}"
+
+# File Handling Functions
+def load_data(filename):
+    try:
+        with open(filename, "r") as file:
+            return json.load(file)
+    except FileNotFoundError:
+        return []
+    except json.JSONDecodeError:
+        return []
+
+def save_data(filename, data):
+    with open(filename, "w") as file:
+        json.dump(data, file, indent=4)
+
+if __name__ == "__main__":
+    # Example Usage
+    manager = Manager(1, "Alice")
+    employee = Employee(2, "Bob")
+    car = Vehicle(101, "Toyota", "Camry", 2022)
+    booking = Booking(1, manager, car, "2025-02-21", "2025-02-25")
+    payment = Payment(1, 150.0)
+    
+    print(manager)
+    print(employee)
+    print(car)
+    print(booking)
+    print(payment)
+
+'''
+"Expanding file handling to save and retrieve bookings, vehicles, and users.
+Implementing a console-based menu system.
+Adding exception handling for user inputs.'''
